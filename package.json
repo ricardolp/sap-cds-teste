@@ -1,0 +1,22 @@
+{
+  "name": "balanca",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "cds": { "requires": {
+    "db": { "kind": "sqlite", "credentials": { "url":"db\\application.db" }}
+  }},
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "sqlite3": "^5.1.6"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  }
+}

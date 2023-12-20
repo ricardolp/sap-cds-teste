@@ -1,0 +1,40 @@
+###
+#
+# Browse Books
+#
+GET http://localhost:4004/odata/v4/application/Users?&$select=ID,name,username
+
+###
+#
+# Get Author wit ID 101
+#
+GET http://localhost:4004/odata/v4/application/Users
+
+###
+#
+# Login
+#
+POST http://localhost:4004/odata/v4/application/Login
+Content-Type: application/json
+
+{"username": "Ricardo12", "password": "12345"}
+
+###
+#
+# Update Author with ID 101
+#
+POST http://localhost:4004/odata/v4/application/Users
+Content-Type: application/json
+
+{"name": "Some Author", "username": "Ricardo12", "password": "12345"}
+
+
+###
+#
+# Order a Book
+#
+POST http://localhost:4004/odata/v4/application/Ticket
+Content-Type: application/json;IEEE754Compatible=true
+
+{"centro_ori": "1001", "centro_des": "1004", "empresa": "Teste 123"}
+
