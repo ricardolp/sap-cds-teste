@@ -5,18 +5,40 @@
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
-  "cds": { "requires": {
-    "db": { "kind": "sqlite", "credentials": { "url":"db\\application.db" }}
-  }},
+  "cds": {
+    "features": {
+      "fiori_preview": true
+    },
+    "requires": {
+      "[development]": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db\\application.db"
+        }
+      },
+      "[production]": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db\\application.db"
+        }
+      },
+      "db": "sqlite"
+    }
+  },
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "express": "^4",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "passport": "^0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "build": ""
   }
 }
